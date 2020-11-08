@@ -1,0 +1,44 @@
+﻿@model Online_Assessment_Project.ViewModel.CreateTestViewModel
+
+@{
+    ViewBag.Title = "CreateTest";
+}
+
+<h2>Create Test</h2>
+@using (Html.BeginForm("CreateTest", "Test", FormMethod.Post))
+{
+    <div class="col-md-auto">
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.TestName)
+
+            <div class="col-md-12">
+                @Html.TextBoxFor(Model => Model.TestName)
+            </div>
+            @Html.LabelFor(Model => Model.Subject)
+            <div class="col-md-12">
+                @Html.TextBoxFor(Model => Model.Subject)
+            </div>
+            @Html.LabelFor(Model => Model.Grade)
+            <div class="col-md-12">
+                @Html.EnumDropDownListFor(model => model.Grade, "Choose Grade")
+            </div>
+            @Html.LabelFor(Model => Model.TestDate)
+            <div class="col-md-12">
+                @Html.TextBoxFor(Model => Model.TestDate, new { type = "Date" })
+            </div>
+            @Html.LabelFor(Model => Model.StartTime)
+            <div class="col-md-12">
+                @Html.TextBoxFor(Model => Model.StartTime, new { type = "Time" })
+            </div>
+            @Html.LabelFor(Model => Model.EndTime)
+            <div class="col-md-12">
+                @Html.TextBoxFor(Model => Model.EndTime, new { type = "Time" })
+            </div>
+            <div class="col-md-12">
+                <input type="submit" value="Create Questions" class="btn-dark" />
+            </div>
+        </div>
+    </div>
+
+}
+
